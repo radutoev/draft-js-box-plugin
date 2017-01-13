@@ -1,0 +1,56 @@
+{
+  "name": "draft-js-box-plugin",
+  "version": "0.0.1",
+  "description": "Box wrapper plugin for DraftJS",
+  "author": {
+    "name": "Radu Toev",
+    "email": "radutoev@gmail.com",
+    "url": "http://github.com/radutoev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/radutoev/draft-js-box-plugin.git"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "cross-env ./node_modules/.bin/babel src --out-dir lib", 
+    "compile": "npm run build",
+    "precompile": "npm run clean",
+    "prepublish": "npm run compile",
+    "test": "cross-env NODE_ENV=test ./node_modules/.bin/babel-node test | faucet",
+    "posttest": "npm run lint",
+    "clean": "rd .\\lib",
+    "lint": "cross-env ./node_modules/.bin/eslint 'src/*.js' 'src/**/*.js'; exit 0"
+  },
+  "keywords": [
+    "editor",
+    "wysiwyg",
+    "draft",
+    "react",
+    "ux",
+    "components",
+    "widget",
+    "react-component"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "draft-js": ">=0.9.1",
+    "react": ">=15.0.0",
+    "react-dom": ">=15.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "eslint": "^3.13.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "faucet": "0.0.1",
+    "is-function": "^1.0.1",
+    "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "decorate-component-with-props": "^1.0.2",
+    "immutable": "~3.7.4"  
+  }
+}
