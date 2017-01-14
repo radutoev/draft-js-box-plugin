@@ -14,7 +14,7 @@ export default class Box extends Component {
       setEditorState, // eslint-disable-line no-unused-vars
       ...otherProps
     } = this.props; // eslint-disable-line no-use-before-define
-    const combinedClassName = unionClassNames(theme.hashtag, className);
+    const combinedClassName = unionClassNames(theme.box, className);
     return (
       <span {...otherProps} className={combinedClassName} />
     );
