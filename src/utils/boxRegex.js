@@ -39,7 +39,6 @@ function regexSupplant(regex, flags) {
     if (typeof newRegex !== 'string') {
       newRegex = newRegex.source;
     }
-    debugger;
     return newRegex;
   }), flags);
 }
