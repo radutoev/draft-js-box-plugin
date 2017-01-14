@@ -1,6 +1,6 @@
 {
  "name": "draft-js-box-plugin",
- "version": "0.0.1",
+ "version": "0.0.3",
  "description": "Box wrapper plugin for DraftJS",
  "author": {
    "name": "Radu Toev",
