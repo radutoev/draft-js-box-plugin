@@ -4,7 +4,7 @@ import boxStrategy from './boxStrategy';
 import styles from './styles.css';
 
 const defaultTheme = {
-  hashtag: styles.hashtag,
+  box: styles.box,
 };
 
 export default (config = {}) => { 
