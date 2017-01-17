@@ -17,9 +17,9 @@ var boxSpecialChars = /_\u200c\u200d\ua67e\u05be\u05f3\u05f4\uff5e\u301c\u309b\u
 var regexes = {};
 regexes.boxSigns = /[+]/;
 regexes.boxAlpha = new RegExp("[" + unicodeLettersAndMarks + "]");
-regexes.boxAlphaNumeric = new RegExp("[" + unicodeLettersAndMarks + unicodeNumbers + hashtagSpecialChars + "]");
+regexes.boxAlphaNumeric = new RegExp("[" + unicodeLettersAndMarks + unicodeNumbers + boxSpecialChars + "]");
 regexes.endBoxMatch = regexSupplant(/^(?:#{boxSigns}|:\/\/)/);
-regexes.boxBoundary = new RegExp("(?:^|$|[^&" + unicodeLettersAndMarks + unicodeNumbers + hashtagSpecialChars + "])");
+regexes.boxBoundary = new RegExp("(?:^|$|[^&" + unicodeLettersAndMarks + unicodeNumbers + boxSpecialChars + "])");
 regexes.validBox = regexSupplant(/(#{boxBoundary})(#{boxSigns})(?!\ufe0f|\u20e3)(#{boxAlphaNumeric}*#{boxAlpha}#{boxAlphaNumeric}*)/gi);
 
 // A function that composes regexes together
