@@ -17,17 +17,20 @@
    "build": "npm run clean && npm run build:js && npm run build:css",
    "build:js": "WEBPACK_CONFIG=webpack.config.js BABEL_DISABLE_CACHE=1 BABEL_ENV=production NODE_ENV=production node_modules/.bin/babel --out-dir='lib' --ignore='__test__/*' src",
    "build:css": "node scripts/concatCssFiles $(pwd) && node_modules/.bin/rimraf lib-css",
+   "build:cygwin": "npm run clean && npm run build:cygwin:js && npm run build:cygwin:css",
+   "build:cygwin:js": "set WEBPACK_CONFIG=webpack.config.js && set BABEL_DISABLE_CACHE=1 && set BABEL_ENV=production && set NODE_ENV=production && sh node_modules/.bin/babel --out-dir='lib' --ignore='__test__/*' src",
+   "build:cygwin:css": "sh build_cygwin_css",
    "prepublish": "npm run build"
  },
  "keywords": [
- "editor",
- "wysiwyg",
- "draft",
- "react",
- "ux",
- "components",
- "widget",
- "react-component"
+  "editor",
+  "wysiwyg",
+  "draft",
+  "react",
+  "ux",
+  "components",
+  "widget",
+  "react-component"
  ],
  "license": "MIT",
  "devDependencies": {
@@ -43,7 +46,6 @@
    "style-loader": "^0.13.1",
    "webpack": "^1.14.0",
    "extract-text-webpack-plugin": "^1.0.1",
-   "autoprefixer": "^6.6.1",
    "babel-cli": "^6.18.0",
    "babel-plugin-webpack-loaders": "^0.8.0"
  },

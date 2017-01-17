@@ -3,6 +3,7 @@ const path = require('path');
 const dirname = path.join(process.argv[2], 'lib-css'); // where to place webpack files
 var content = ''; // eslint-disable-line no-var
 
+fs.mkdirSync(dirname);
 const filenames = fs.readdirSync(dirname);
 filenames.forEach((filename) => {
   const filePath = path.join(dirname, filename);

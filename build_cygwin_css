@@ -1,0 +1,1 @@
+node scripts/concatCssFiles $(cygpath -w $(pwd)) && sh node_modules/.bin/rimraf lib-css
