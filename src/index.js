@@ -9,11 +9,13 @@ const defaultTheme = {
 
 export default (config = {}) => { 
     const theme = config.theme ? config.theme : defaultTheme;
+    const onSelect = config.onSelect ? config.onSelect : null; 
+
     return {
         decorators: [
             {
                 strategy: boxStrategy,
-                component: decorateComponentWithProps(Box, { theme })     
+                component: decorateComponentWithProps(Box, { theme, onSelect })     
             }
         ]            
     }

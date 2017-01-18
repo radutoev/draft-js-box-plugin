@@ -12,11 +12,15 @@ export default class Box extends Component {
       getEditorState, // eslint-disable-line no-unused-vars
       offsetKey, // eslint-disable-line no-unused-vars
       setEditorState, // eslint-disable-line no-unused-vars
+      onSelect,
       ...otherProps
     } = this.props; // eslint-disable-line no-use-before-define
     const combinedClassName = unionClassNames(theme.box, className);
     return (
-      <span {...otherProps} className={combinedClassName} />
+      <span>
+        <span {...otherProps} className={combinedClassName} />
+        <button onClick={() => { this.props.onSelect() }}>h</button>
+      </span>
     );
   }
 }
